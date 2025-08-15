@@ -95,33 +95,33 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	/* 0-7 normal */
+	"#222222", /* 0 black   -> matches dwm bar background */
+	"#ea6962", /* 1 red     -> muted red (gruvbox-like) */
+	"#a7c080", /* 2 green   */
+	"#d8a657", /* 3 yellow  */
+	"#6c8ea4", /* 4 blue    -> muted, low-intensity blue */
+	"#c77eb7", /* 5 magenta */
+	"#89b482", /* 6 cyan    -> more greenish/calm cyan */
+	"#c8c9d0", /* 7 white (foreground) -> light readable fg */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	/* 8-15 bright */
+	"#444444", /* 8  bright black (a bit lighter than bg) */
+	"#ff7b72", /* 9  bright red */
+	"#b7d08a", /* 10 bright green */
+	"#f0d7a5", /* 11 bright yellow */
+	"#6f8fb5", /* 12 bright blue (muted bright) */
+	"#d7a7d9", /* 13 bright magenta */
+	"#a6d0b0", /* 14 bright cyan */
+	"#ffffff", /* 15 bright white */
 
 	[255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	/* extra indices used by this build for defaults / cursor */
+	"#c8c9d0", /* 256 -> cursor color (defaultcs) */
+	"#2f2f2f", /* 257 -> reverse-cursor / selection background (defaultrcs) */
+	"#c8c9d0", /* 258 -> defaultfg (what text uses by default) */
+	"#222222", /* 259 -> defaultbg (terminal background) */
 };
 
 
