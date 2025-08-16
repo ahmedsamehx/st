@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Liberation Mono:weight=bold:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 10;
 
 /*
@@ -95,45 +95,36 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 0-7 normal */
-	"#222222", /* 0 black   -> matches dwm bar background */
-	"#ea6962", /* 1 red     -> muted red (gruvbox-like) */
-	"#a7c080", /* 2 green   */
-	"#d8a657", /* 3 yellow  */
-	"#6c8ea4", /* 4 blue    -> muted, low-intensity blue */
-	"#c77eb7", /* 5 magenta */
-	"#89b482", /* 6 cyan    -> more greenish/calm cyan */
-	"#c8c9d0", /* 7 white (foreground) -> light readable fg */
-
-	/* 8-15 bright */
-	"#444444", /* 8  bright black (a bit lighter than bg) */
-	"#ff7b72", /* 9  bright red */
-	"#b7d08a", /* 10 bright green */
-	"#f0d7a5", /* 11 bright yellow */
-	"#6f8fb5", /* 12 bright blue (muted bright) */
-	"#d7a7d9", /* 13 bright magenta */
-	"#a6d0b0", /* 14 bright cyan */
-	"#ffffff", /* 15 bright white */
-
-	[255] = 0,
-
-	/* extra indices used by this build for defaults / cursor */
-	"#c8c9d0", /* 256 -> cursor color (defaultcs) */
-	"#2f2f2f", /* 257 -> reverse-cursor / selection background (defaultrcs) */
-	"#c8c9d0", /* 258 -> defaultfg (what text uses by default) */
-	"#222222", /* 259 -> defaultbg (terminal background) */
+	
+	/* 8 normal colors */
+	[0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+ 	[1] = "#ea6962", /* red     */
+	[2] = "#a9b665", /* green   */
+	[3] = "#d8a657", /* yellow  */
+	[4] = "#7daea3", /* blue    */
+	[5] = "#d3869b", /* magenta */
+	[6] = "#89b482", /* cyan    */
+	[7] = "#d4be98", /* white   */
+  	/* 8 bright colors */
+	[8]  = "#928374", /* black   */
+	[9]  = "#ef938e", /* red     */
+	[10] = "#bbc585", /* green   */
+	[11] = "#e1bb7e", /* yellow  */
+	[12] = "#9dc2ba", /* blue    */
+	[13] = "#e1acbb", /* magenta */
+	[14] = "#a7c7a2", /* cyan    */
+	[15] = "#e2d3ba", /* white   */
 };
 
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 257;
-
 /*
  * Default shape of cursor
  * 2: Block ("█")
